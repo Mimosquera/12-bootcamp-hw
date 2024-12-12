@@ -1,6 +1,9 @@
-
-function Navigation () {
-    return <p>I am a Nav Bar!</p>
+const Navigation = () => {
+    return (
+        <div>
+            <p>I am a Nav Bar!</p>
+        </div>
+    );
 }
 
 export default Navigation;

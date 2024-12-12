@@ -1,7 +1,12 @@
 import Navigation from './Navigation.jsx'
 
-function Header() {
-    return <Navigation />
+const Header = () => {
+    return (
+    <div>
+        <h1>This is the Header</h1>
+        <Navigation />
+    </div>
+    )
 }
 
 export default Header;

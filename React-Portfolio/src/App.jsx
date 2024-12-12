@@ -1,11 +1,19 @@
-import './styles/app.css';
-import Header from './components/Header';
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Project from "./components/Project"
 
-function App() {
-  
+const App = () => {
   return (
-    <Header />
-  )
-}
+    <div id="app">
+      <Header />
+      <main>
+        <p>Portfolio Content</p>
+        <Project />
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
-export default App
+export default App;
