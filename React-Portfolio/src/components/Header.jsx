@@ -1,4 +1,4 @@
-import Navigation from './components/Navigation.jsx'
+import Navigation from './Navigation.jsx'
 
 function Header() {
     return <Navigation />
