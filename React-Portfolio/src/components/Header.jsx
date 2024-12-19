@@ -1,11 +1,12 @@
 import Navigation from './Navigation.jsx'
+import HeaderImage from '../images/header-image.png'
 
 const Header = () => {
     return (
-    <div>
-        <h1>This is the Header</h1>
+    <header className="header">
         <Navigation />
-    </div>
+        <img src={HeaderImage} alt="Header Image" className="header-image img-fluid"/>
+    </header>
     )
 }
 

@@ -1,6 +1,6 @@
 const Project = () => {
     return (
-        <p>Project Content</p>
+        <p>Project Component</p>
     )
 }
 
