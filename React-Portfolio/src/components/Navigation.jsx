@@ -1,52 +1,39 @@
+import "../styles/navbar.css";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 const Navigation = () => {
-    return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">
-                                Home <span className="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Projects</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                        <a
-                            className="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdownMenuLink"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            More
-                        </a>
-                            <div
-                                className="dropdown-menu"
-                                aria-labelledby="navbarDropdownMenuLink"
-                            >
-                                <a className="dropdown-item" href="#">Github</a>
-                                <a className="dropdown-item" href="#">LinkedIn</a>
-                                <a className="dropdown-item" href="#">Contact Me</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        if (navbarCollapse.classList.contains("show")) {
+          navbarToggler.click();
+        }
+      });
+    });
+  }, []);
+
+  return (
+    <nav className="navbar fixed-top navbar-expand-lg">
+      <div className="container">
+        <Link className="navbar-brand" to="/">Michael Mosquera</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item"><Link className="nav-link" to="/portfolio">Portfolio</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/resume">Resume</Link></li>
+          </ul>
         </div>
-    );
+      </div>
+    </nav>
+  );
 };
 
 export default Navigation;

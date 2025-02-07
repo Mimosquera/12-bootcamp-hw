@@ -1,13 +1,19 @@
-import Navigation from './Navigation.jsx'
-import HeaderImage from '../images/header-image.png'
+import Navigation from "./Navigation.jsx";
+import HeaderImage from "../images/header-image.png";
+import "../styles/header.css";
 
 const Header = () => {
-    return (
+  return (
     <header className="header">
-        <Navigation />
-        <img src={HeaderImage} alt="Header Image" className="header-image img-fluid"/>
+      <div className="overlay"></div>
+      <Navigation />
+      <img src={HeaderImage} alt="Header Background" className="header-image" />
+      <div className="header-content">
+        <h1 className="header-title">Michael Mosquera</h1>
+        <p className="header-subtitle">Full Stack Web Developer</p>
+      </div>
     </header>
-    )
-}
+  );
+};
 
 export default Header;
